@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% if title %}
+<title>PIZZERIA - {{title}}</title>
+{% else %}
+<title>PIZZERIA</title>
+{% endif %}
+
+
+{% block content %}
+
+<div id="pizza_container" class="p-1">
+    <div class="seccion1">
+        <h3 id="pizza_nuestras">Nuestras pizzas</h3>
+        <h2 id="pizza_nombre">Barbacoa Gourmet</h2>
+        <p id="pizza_descripcion">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta).</p>
+        <div id="pizza_precios">
+        <span id="pizza_precio">7.99$</span>
+        <span id="pizza_descuento">10.99$</span>
+        </div>
+        <button id="btn-pedir">PEDIR ONLINE</button>
+        </div>
+        <aside class="seccion2" id="img">
+            <img src="{% static 'img/pizza_1.png' %}" alt="pizzaIMG">
+        </aside>
+    </div>
+</div>
+
+<section id="footer">
+    <div id="btn_page">
+      <a id="btn-prev" href="{% url 'pedidos' %}"><img class="arrow-prev" src="{% static 'img/right-arrow.svg' %}" alt="arrow-prev"> ANTERIOR</a>
+      <span class="numberPage">
+        <strong class="current">01</strong>/20
+      </span>
+      <a id="btn-next" href="{% url 'gourmet' %}">SIGUIENTE <img class="arrow-next" src="{% static 'img/right-arrow.svg' %}" alt="arrow-prev"></a>
+    </div>
+    <div class="redes">
+      <button id="Facebook">Facebook</button>
+      <button id="Instagram">Instagram</button>
+      <button id="Tiktok">Tiktok</button>
+    </div>
+  </section>
+
+
+{% endblock content %}

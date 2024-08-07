@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+  <div class="banner" style="background-image: url('{% static 'img/comidaRapida.png' %}')">
+    <div class="container">
+      <h1 id="comidaRapida">La entrega de los pedidos esta <br>cerca de ti</h1>
+      <input type="text" placeholder="Buscar..." id="search-input">
+      <div class="delivery-options">
+        <button class="option" id="deliver-now">Entregar a hora</button>
+        <div class="option" id="schedule-delivery" style="display: none;">
+          Programar entrega
+        </div>
+      </div>
+      <button id="search-button">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const scheduleDelivery = document.getElementById('schedule-delivery');
+  const deliverNow = document.getElementById('deliver-now');
+
+  deliverNow.addEventListener('click', function() {
+    // Realiza alguna acción al hacer clic en "Entregar a hora"
+    console.log('Entregar a hora');
+  });
+
+  scheduleDelivery.addEventListener('click', function() {
+    if (scheduleDelivery.style.display === 'none') {
+      scheduleDelivery.style.display = 'block';
+    } else {
+      scheduleDelivery.style.display = 'none';
+    }
+  });
+</script>
+
+{% endblock content %}
